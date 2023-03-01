@@ -24,7 +24,7 @@
 - [📝 License](#license)
 
 
-# 📖<a name="about-project">Math Magician</a>
+# 📖<a name="about-project">Book Store App</a>
 
 
 ***In this activity you will set up a Calculator project for the Math Magician SPA, using React.***
