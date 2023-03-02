@@ -5,12 +5,12 @@ import { addbook, removebook } from '../components/redux/books/bookSlice';
 
 function Books() {
   const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
+  const [btitle, setTitle] = useState('');
   const books = useSelector((state) => state.book.books);
   const Dispatch = useDispatch();
   const removeBook = (e) => {
     e.preventDefault();
-    Dispatch(addbook({ id: books.length + 1, author: name, titleName: title }));
+    Dispatch(addbook({ item_id: books.length + 1, author: name, title: btitle }));
   };
 
   return (
