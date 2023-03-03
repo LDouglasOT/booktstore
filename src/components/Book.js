@@ -7,7 +7,6 @@ function Book({ item, itemId }) {
   const Dispatch = useDispatch();
   const Booksremove = async () => {
     await Dispatch(deleteBook(itemId)).then((res) => {
-      console.log(res);
       Dispatch(fetchBooks());
     });
   };
@@ -25,6 +24,6 @@ Book.propTypes = {
 };
 Book.defaultProps = {
   item: {},
-  item_id: number,
+  itemId: number,
 };
 export default Book;
