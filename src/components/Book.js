@@ -3,10 +3,10 @@ import PropTypes, { number } from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteBook, fetchBooks } from './redux/books/bookSlice';
 
-function Book({ item, item_id }) {
+function Book({ item, itemId }) {
   const Dispatch = useDispatch();
   const Booksremove = async () => {
-    await Dispatch(deleteBook(item_id)).then((res) => {
+    await Dispatch(deleteBook(itemId)).then((res) => {
       console.log(res);
       Dispatch(fetchBooks());
     });
@@ -20,7 +20,7 @@ function Book({ item, item_id }) {
   );
 }
 Book.propTypes = {
-  item_id: PropTypes.number,
+  itemId: PropTypes.number,
   item: PropTypes.objectOf,
 };
 Book.defaultProps = {

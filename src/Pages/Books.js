@@ -40,7 +40,7 @@ function Books() {
           <div key={key}>
             {books[key].map((item) => (
               <div key={key}>
-                <li key={key}><Book item={item} item_id={key} /></li>
+                <li key={key}><Book item={item} itemId={key} /></li>
               </div>
             ))}
           </div>
