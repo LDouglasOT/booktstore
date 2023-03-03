@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
-import { addbook, removebook } from '../components/redux/books/bookSlice';
+import { fetchBooks, saveBook } from '../components/redux/books/bookSlice';
 
 function Books() {
   const [name, setName] = useState('');
   const [btitle, setTitle] = useState('');
   const books = useSelector((state) => state.book.books);
   const Dispatch = useDispatch();
-  const removeBook = (e) => {
+  useEffect(() => {
+    Dispatch(fetchBooks());
+  }, [0]);
+  const save = async (e) => {
     e.preventDefault();
-    Dispatch(addbook({ item_id: books.length + 1, author: name, title: btitle }));
+    const data = {
+      item_id: Object.keys(books).length + 1,
+      title: btitle,
+      author: name,
+      category: 'Classics',
+    };
+    await Dispatch(saveBook(data)).then(() => {
+      Dispatch(fetchBooks());
+    });
   };
 
   return (
@@ -20,13 +31,19 @@ function Books() {
         <form action="" className="book-form">
           <input className="entry" onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Author" />
           <input className="entry" type="text" onChange={(e) => setName(e.target.value)} placeholder="Title" />
-          <input className="submit-btn" type="submit" value="Save Book" onClick={(e) => removeBook(e)} />
+          <input className="submit-btn" type="submit" value="Save Book" onClick={(e) => save(e)} />
         </form>
       </div>
       <ul>
         <h2>Books List</h2>
-        {books.map((item) => (
-          <li key={item}><Book item={item} remove={(items) => Dispatch(removebook(items))} /></li>
+        {Object.keys(books).map((key) => (
+          <div key={key}>
+            {books[key].map((item) => (
+              <div key={key}>
+                <li key={key}><Book item={item} item_id={key} /></li>
+              </div>
+            ))}
+          </div>
         ))}
       </ul>
     </div>
