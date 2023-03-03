@@ -6,7 +6,7 @@ import { deleteBook, fetchBooks } from './redux/books/bookSlice';
 function Book({ item, itemId }) {
   const Dispatch = useDispatch();
   const Booksremove = async () => {
-    await Dispatch(deleteBook(itemId)).then((res) => {
+    await Dispatch(deleteBook(itemId)).then(() => {
       Dispatch(fetchBooks());
     });
   };
