@@ -1,18 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteBook, fetchBooks } from '../components/redux/books/bookSlice';
+import { deleteBook, fetchBooks } from './redux/books/bookSlice';
 
-
-
-function Book({ item,item_id }) {
+function Book({ item, item_id }) {
   const Dispatch = useDispatch();
-  const Booksremove = async() =>{
-    await Dispatch(deleteBook(item_id)).then((res)=>{
-      console.log(res)
-      Dispatch(fetchBooks())
-    })
-  }
+  const Booksremove = async () => {
+    await Dispatch(deleteBook(item_id)).then((res) => {
+      console.log(res);
+      Dispatch(fetchBooks());
+    });
+  };
   return (
     <div className="Book">
       <h3>{ item.author }</h3>
@@ -22,11 +20,11 @@ function Book({ item,item_id }) {
   );
 }
 Book.propTypes = {
-  remove: PropTypes.func,
+  item_id: PropTypes.number,
   item: PropTypes.objectOf,
 };
 Book.defaultProps = {
-  remove: () => {},
   item: {},
+  item_id: number,
 };
 export default Book;
