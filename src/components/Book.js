@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { number } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { deleteBook, fetchBooks } from './redux/books/bookSlice';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -15,7 +15,7 @@ function Book({ item, itemId }) {
   return (
     <div className="Book">
       <div className="book-details">
-        <h5 className="categories">ACTION</h5>
+        <h5 className="categories">Action</h5>
         <h4 className="title">{ item.author }</h4>
         <h5 className="author">{ item.title }</h5>
         <div className="action-btn-wrapper">
@@ -29,11 +29,16 @@ function Book({ item, itemId }) {
       <div className="analytics-wrapper">
         <div className="progress">
           <div style={{ width: 80, height: 80 }}>
-            <CircularProgressbar value={66} />
+            <CircularProgressbar
+              strokeWidth={6}
+              trailColor="#d6d6d6"
+              styles={buildStyles({ textColor: 'red', pathColor: '#307bbe', trailColor: '#e8e8e8' })}
+              value={66}
+            />
           </div>
           <div className="progress-text">
-            <h3 className="ptext">64%</h3>
-            <h3 className="ptextx">Completed</h3>
+            <p className="ptext">64%</p>
+            <p className="ptextx">Completed</p>
           </div>
         </div>
         <div className="vls" />

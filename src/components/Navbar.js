@@ -8,8 +8,8 @@ function Navbar({ url }) {
       <div className="cms-wrapper">
         <p>Bookstore CMS</p>
         <ul>
-          <li><Link className="links" to="/">{url ? <span>Books</span> : <span className="selected">Books</span> }</Link></li>
-          <li><Link className="links" to="/categories">{url ? <span className="selected">Categories</span> : <span>Categories</span>}</Link></li>
+          <li className="bookli"><Link className="links" to="/">{url ? <span>BOOKS</span> : <span className="selected">BOOKS</span> }</Link></li>
+          <li><Link className="linkers" to="/categories">{url ? <span className="selected">CATEGORIES</span> : <span>CATEGORIES</span>}</Link></li>
         </ul>
       </div>
 

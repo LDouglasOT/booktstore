@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .App {
   background-color: rgb(245, 246, 250);
   display: flex;
@@ -24,10 +25,11 @@ li {
 }
 
 .nav-wrap p {
-  margin-left: 15px;
+  margin-left: 62px;
   font-size: 1.875rem;
-  font-weight: 800;
-  color: rgb(2, 144, 255);
+  font-weight: 700;
+  color: #0290ff;
+  font-family: "Montserrat",sans-serif;
 }
 
 .book-list {
@@ -118,8 +120,16 @@ li {
 .links {
   text-decoration: none;
   color: gray;
-
-  /* margin-right: 500px; */
+  font-family: "Montserrat",sans-serif;
+  font-size: .813rem;
+  margin-right: -25px;
+}
+.linkers{
+  text-decoration: none;
+  color: gray;
+  font-family: "Montserrat",sans-serif;
+  font-size: .813rem;
+  margin-right: -40px;
 }
 
 .status-home {
@@ -151,7 +161,25 @@ li {
 
 .profilepic {
   padding: 10px;
-  border: 1px solid gray;
+  border: 1px solid #e8e8e8;
   margin-right: 30px;
   border-radius: 50%;
+}
+
+.line{
+  height: 0.125rem;
+  background-color: #e8e8e8;
+  width: 90%;
+  margin-left: 40px;
+}
+.new-book{
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.18px;
+  color: #888;
+  font-family: "Montserrat",sans-serif;
+  margin-left: 6px;
+}
+.bookli{
+  margin-right: 10px;
 }

@@ -30,12 +30,18 @@ function Books({ statechange }) {
   return (
     <div className="book-page">
       <div className="form-wrapper">
+        <p className="new-book">ADD NEW BOOK</p>
         <form action="" className="book-form">
           <input className="entry" type="text" onChange={(e) => setName(e.target.value)} placeholder="Book Title" />
-          <input className="entryx" onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Author" />
+          <select className="entryx" onChange={(e) => setTitle(e.target.value)}>
+            <option value="Action">Action</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Economy">Economy</option>
+          </select>
           <input className="submit-btn" type="submit" value="ADD BOOK" onClick={(e) => save(e)} />
         </form>
       </div>
+      <div className="line" />
       <ul className="book-list">
         {Object.keys(books).map((key) => (
           <div key={key} className="maindiv">
