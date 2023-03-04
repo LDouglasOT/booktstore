@@ -1,10 +1,11 @@
-.App { 
+.App {
   background-color: rgb(245, 246, 250);
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 30px 10px;
 }
+
 .nav-wrap {
   background-color: white;
   width: 100%;
@@ -12,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-width: 0px 0px 2px 0px;
+  border-width: 0 0 2px 0;
   border-color: rgb(228, 227, 227);
   border-style: solid;
 }
@@ -23,17 +24,33 @@ li {
 }
 
 .nav-wrap p {
-  font-size: 10px;
-  font-weight: 600;
   margin-left: 15px;
   font-size: 1.875rem;
   font-weight: 800;
   color: rgb(2, 144, 255);
 }
 
+.book-list {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-list li {
+  width: 100%;
+  padding: 10px;
+}
+
 .nav-wrap ul {
   display: flex;
   justify-content: flex-end;
+}
+
+.Book-container li {
+  display: flex;
+  align-items: center;
 }
 
 .nav-wrap ul li {
@@ -52,15 +69,15 @@ li {
 }
 
 .Book {
-width: 90%;
-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-background-color: white;
-margin-left: auto;
-margin-right: auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .Book h3 {
@@ -101,6 +118,7 @@ padding: 10px;
 .links {
   text-decoration: none;
   color: gray;
+
   /* margin-right: 500px; */
 }
 
@@ -112,42 +130,28 @@ padding: 10px;
   align-items: center;
   justify-content: center;
 }
-.Book-container{
- width: 100%;
- display: flex;
- align-items: center;
 
-}
-.Book-container li{
+.Book-container {
+  width: 100%;
   display: flex;
   align-items: center;
 }
-.book-list{
+
+.maindiv {
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
 }
 
-.book-list li{
-  width:100%;
-  padding: 10px;
-}
-.maindiv{
-  width: 100%;
-}
 .main-wrapper {
   display: flex;
   flex-direction: column;
   width: 90%;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 0 16px;
   background-color: white;
 }
 
 .profilepic {
   padding: 10px;
-  border:  1px solid gray;
-  margin-right:30px ;
+  border: 1px solid gray;
+  margin-right: 30px;
   border-radius: 50%;
 }
